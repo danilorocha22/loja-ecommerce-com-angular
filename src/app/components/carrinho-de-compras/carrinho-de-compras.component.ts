@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CarrinhoService } from './../../services/carrinho.service';
 import { ItemCarrinho } from './../../types/produtos';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carrinho-de-compras',
@@ -13,7 +14,8 @@ export class CarrinhoDeComprasComponent implements OnInit {
 
 
   constructor(
-    public carrinhoService: CarrinhoService
+    public carrinhoService: CarrinhoService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class CarrinhoDeComprasComponent implements OnInit {
   }
 
   removerItemDoCarrinho(itemId: number) {
-    this.itensCarrinho = this.itensCarrinho.filter(item => item.id  !== itemId)
+    this.itensCarrinho = this.itensCarrinho.filter(item => item.id !== itemId)
     this.calcularTotalCarrinho()
     this.carrinhoService.removerItemDoCarrinho(itemId)
   }
@@ -32,7 +34,9 @@ export class CarrinhoDeComprasComponent implements OnInit {
   }
 
   comprar() {
-    throw new Error('Method not implemented.');
-    }
+    alert('Parabeńs! Você finalizou sua compra')
+    this.carrinhoService.limparCarrinho()
+    this.router.navigate(['produtos'])
+  }
 
 }
