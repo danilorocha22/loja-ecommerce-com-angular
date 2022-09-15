@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 const ROUTES: Routes = [
   { path: 'produtos', loadChildren: () => import('./components/produtos/produtos.module').then(m => m.ProdutosModule) },
   { path: '', redirectTo: 'produtos', pathMatch: 'full' },
+  { path: 'carrinho', loadChildren: () => import('./components/carrinho-de-compras/carrinho-de-compras.module').then(m => m.CarrinhoDeComprasModule) },
   { path: '**', component: PaginaNaoEncontradaComponent }
 ];
 
