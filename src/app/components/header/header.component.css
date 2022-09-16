@@ -8,18 +8,20 @@
 }
 
 .main-header__title {
-  font-size: 40px;
+  font-size: 80px;
   letter-spacing: -1.5px;
 }
 
 .main-header__title--blue {
+  color: var(--blue);
   color: blue;
-  font-size:60px;
+  font-size:80px;
 }
 
 .main-header__title--orange {
+  color: var(--orange);
   color: orange;
-  font-size:60px;
+  font-size:80px;
 }
 
 .main-header__menu ul {
@@ -29,7 +31,7 @@
 
 .main-header__menu a {
   padding: 10px 10px;
-  color: gray;
+  color: var(--gray);
   font-weight: 400;
   font-size: 22px;
   text-decoration: none;
@@ -37,7 +39,7 @@
 }
 
 .main-header__menu a:hover {
-  background-color: blue;
+  background-color: var(--blue);
   color: #fff;
 }
 
@@ -49,7 +51,7 @@
 }
 
 .badge-carrinho {
-  background-color: darkblue;
+  background-color: var(--dark-blue);
   padding: 5px 10px;
   border-radius: 4px;
   color: white;
@@ -65,8 +67,8 @@
   height: 56px;
   padding: 28px;
   flex:1;
-  background-color: lightgray;
-  color: gray;
+  background-color: var(--light-gray);
+  color: var(--gray);
   border: none;
   transition: all -3s ease-in-out;
   font-size: 22px;
@@ -75,7 +77,7 @@
 .search-form button{
   width: 56px;
   height: 56px;
-  background-color: blue;
+  background-color: var(--blue);
   border:none;
   color: #fff;
   font-size: 22px;

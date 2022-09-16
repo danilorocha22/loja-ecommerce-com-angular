@@ -1,0 +1,89 @@
+<h2 class="contact__title">Entre em contato</h2>
+
+<section class="contact__container">
+
+  <form action="" class="contact-form" [formGroup]="formContato" (ngSubmit)="enviarFormulario()">
+
+    <input type="text" formControlName="nome" [class.valid]="formContato.controls['nome'].valid"
+      [class.invalid]="formContato.controls['nome'].invalid && (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)"
+      placeholder="Digite seu nome">
+    <div
+      *ngIf="formContato.controls['nome'].invalid && (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['nome'].hasError('minlength')">
+        Informe no mínimo 03 caracteres
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['nome'].hasError('required')">
+        Este campo é obrigatório
+      </small>
+    </div>
+
+    <input type="text" formControlName="assunto" [class.valid]="formContato.controls['assunto'].valid"
+      [class.invalid]="formContato.controls['assunto'].invalid && (formContato.controls['assunto'].touched || formContato.controls['assunto'].dirty)"
+      placeholder="Digite o assunto">
+    <div
+      *ngIf="formContato.controls['assunto'].invalid && (formContato.controls['assunto'].touched || formContato.controls['assunto'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('minlength')">
+        Informe no mínimo 03 caracteres
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('required')">
+        Este campo é obrigatório
+      </small>
+    </div>
+
+    <input type="tel" mask="(00) 0.0000-0000" formControlName="telefone" [class.valid]="formContato.controls['telefone'].valid"
+      [class.invalid]="formContato.controls['telefone'].invalid && (formContato.controls['telefone'].touched || formContato.controls['telefone'].dirty)"
+      placeholder="(00) 0.0000-0000">
+    <div
+      *ngIf="formContato.controls['telefone'].invalid && (formContato.controls['telefone'].touched || formContato.controls['telefone'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('minlength')">
+        Informe 11 caracteres
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('required')">
+        Este campo é obrigatório
+      </small>
+    </div>
+
+    <input type="email" formControlName="email" [class.valid]="formContato.controls['email'].valid"
+      [class.invalid]="formContato.controls['email'].invalid && (formContato.controls['email'].touched || formContato.controls['email'].dirty)"
+      placeholder="Digite seu e-mail">
+    <div
+      *ngIf="formContato.controls['email'].invalid && (formContato.controls['email'].touched || formContato.controls['email'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['email'].hasError('email')">
+        Informe um e-mail válido
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['email'].hasError('required')">
+        Este campo é obrigatório
+      </small>
+    </div>
+
+    <textarea cols="30" rows="10" maxlength="300" formControlName="mensagem"
+      [class.valid]="formContato.controls['mensagem'].valid"
+      [class.invalid]="formContato.controls['mensagem'].invalid && (formContato.controls['mensagem'].touched || formContato.controls['mensagem'].dirty)"
+      placeholder="Digite a sua mensagem..."></textarea>
+    <div
+      *ngIf="formContato.controls['mensagem'].invalid && (formContato.controls['mensagem'].touched || formContato.controls['mensagem'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('minlength')">
+        Informe no mínimo 03 caracteres
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('required')">
+        Este campo é obrigatório
+      </small>
+    </div>
+
+    <button [disabled]="formContato.invalid" type="submit">Enviar</button>
+
+  </form>
+
+  <address>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125632.6075011294!2d-48.417274400251806!3d-10.26005219685751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x933b3439911f1257%3A0x93b8070d05c818f!2sPalmas%2C%20TO!5e0!3m2!1spt-BR!2sbr!4v1663251039596!5m2!1spt-BR!2sbr"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <p>Rua: Mussum Ipsum, bairro: cacilds vidis litro abertis, Palmas-TO, CEP 00.000-000.</p>
+
+  </address>
+
+</section>

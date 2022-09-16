@@ -25,7 +25,8 @@ registerLocaleData(ptBr);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' }
