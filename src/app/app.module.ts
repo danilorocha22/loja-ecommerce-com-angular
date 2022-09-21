@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada/pagina-nao-encontrada.component';
 /* ************************************************************************************************************ */
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BarraDePesquisaComponent } from './components/barra-de-pesquisa/barra-de-pesquisa.component';
 
 registerLocaleData(ptBr);
 
@@ -19,13 +21,15 @@ registerLocaleData(ptBr);
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    BarraDePesquisaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    FormsModule
 
   ],
   providers: [
